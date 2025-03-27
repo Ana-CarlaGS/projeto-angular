@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">Cadastro de Clientes</mat-toolbar>
+
+<mat-card>
+  <mat-card-title>Cadastro de Animais</mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Digite o nome">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Idade</mat-label>
+        <input matInput type="number" placeholder="Digite a idade">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Categorias</mat-label>
+        <mat-select [(ngModel)]="categoriasSelecionadas" multiple>
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+            {{ categoria }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+      <button mat-raised-button color="warn">Cancelar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
